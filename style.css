@@ -1,0 +1,283 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    scroll-behavior: smooth;
+}
+
+#grafico {
+    width: 100%;
+    height: 94%;
+}
+#inputFile{
+    padding-top: 14px;
+}
+#hierarquia {
+    width: 100%;
+    height: 100%;
+}
+
+#menu-navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+#taxonomiaDeBloom{
+    width: 70%;
+    height: 90%;
+    padding-left: 200px;
+    padding-top: 80px;
+
+}
+.modal-body p {
+    text-align: justify;
+    font-size: large;
+}
+.modal-header h5{
+    text-align: right;
+}
+
+.secao-hierarquia {
+    height: 100vh;
+}
+.secao-taxonomia {
+    height: 100vh;
+}
+
+.secao-grafico {
+    height: 94vh;
+}
+
+.secao-hierarquia-tree {
+    height: 100vh;
+}
+
+#chartdiv {
+    width: 100%;
+    height: 90%;
+    padding-top: 70px;
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-dialog{
+    margin-top: 400px;
+}
+
+/*modal*/
+
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 400px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+        -ms-transform: translate3d(0%, 0, 0);
+         -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+}
+
+
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+.modal.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+/*Right*/
+.modal.right.fade .modal-dialog {
+    right: -320px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+       -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+         -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+            transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+    right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+
+.modal-header {
+    border-bottom-color: #EEEEEE;
+    background-color: #FAFAFA;
+}
+
+
+
+#content{
+    font-size: 20px;
+    text-align: justify;
+}
+#title-modal{
+    text-align: center;
+}
+
+
+/* List */
+
+#myModalEixoDeFormacao ul li{
+    list-style: none;
+}
+
+.modal-body ul {
+    counter-reset: index;  
+    padding: 0;
+    max-width: 300px;
+  }
+
+
+/* List element */
+#lista-perfil-do-egresso li {
+    counter-increment: index; 
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 12px 0;
+    box-sizing: border-box;
+}
+  
+  
+/* Element counter */
+#lista-perfil-do-egresso li::before {
+    content: counters(index, ".", decimal-leading-zero);
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    min-width: 50px;
+    padding-right: 12px;
+    font-variant-numeric: tabular-nums;
+    align-self: flex-start;
+    background-image: linear-gradient(to bottom, aquamarine, orangered);
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#title-modal-perfil-do-egresso{
+    text-align: center;
+}
+#title-modal-eixo-de-formacao{
+    text-align: right;
+}
+#lista-perfil-do-egresso li{
+    text-align: justify;
+}
+
+
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Open Sans:400,600,800');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+input,
+p,
+a {
+    margin: 0px;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+}
+
+body {
+    background-color: #F1F2F3;
+}
+
+
+.card-container {
+    padding: 100px 0px;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+
+.profile-card-4 {
+    max-width: 300px;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.profile-card-4 img {
+    transition: all 0.25s linear;
+}
+
+.profile-card-4 .profile-content {
+    position: relative;
+    padding: 15px;
+    background-color: #FFF;
+}
+
+.profile-card-4 .profile-name {
+    font-weight: bold;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    color: #777;
+    font-size: 17px;
+}
+
+.profile-card-4 .profile-name p {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.profile-card-4 .profile-description {
+    color: #777;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.profile-card-4 .profile-overview {
+    padding: 15px 0px;
+}
+
+.profile-card-4 .profile-overview p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #777;
+}
+
+.profile-card-4 .profile-overview h4 {
+    color: #273751;
+    font-weight: bold;
+}
+
+.profile-card-4 .profile-content::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    top: -10px;
+    left: 0px;
+    right: 0px;
+    background-color: #FFF;
+    z-index: 0;
+    transform: skewY(3deg);
+}
+
+.profile-card-4:hover img {
+    transform: rotate(5deg) scale(1.1, 1.1);
+    filter: brightness(110%);
+}
