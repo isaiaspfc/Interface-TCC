@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/hierarchy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="/grafico.js" type="text/javascript"></script>
+    <script src="/hierarquia.js"></script>
+    <script src="/hierarquia-tree.js"></script>
+    <script src="/taxonomia.js"></script>
+    <link href="/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .modal.custom .modal-dialog {
+          width:40%;
+          position:fixed;
+          bottom:0;
+          right:0;
+          margin:0;
+      }
+      </style>
+</head>
+
+<body>
+    <div id="menu-navegacao">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#hierarquia">Hierarquia de competências</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#taxonomiaDeBloom">Taxônomia de Bloom</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#grafico">Gráficos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tree">Árvore</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+    </div>
+    <section class="secao-hierarquia" >
+        <!-- Modal para perfil do egresso -->
+        <div class="modal right" id="myModalPerfilDoEgresso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-toggle="modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="title-modal-perfil-do-egresso">Modal title</h5>
+                </div>
+                <div class="modal-body">
+                    <ul id="lista-perfil-do-egresso">
+                        <li id="competencia1"></li>
+                        <li id="competencia2"></li>
+                        <li id="competencia3"></li>
+                        <li id="competencia4"></li>
+                        <li id="competencia5"></li>
+                        <li id="competencia6"></li>
+                        <li id="competencia7"></li>
+                    </ul>
+                </div>
+                <div 7lass="modal-footer">
+                </div>
+                </div>
+            </div>
+          </div>
+
+        <!-- Modal para eixos de formação -->
+        <div class="modal right" id="myModalEixoDeFormacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="title-modal-eixo-de-formacao">Modal title</h5>
+                </div>
+                <div class="modal-body">
+                        <p id="competencia-geral" ></p>      
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div>
+        <div id="hierarquia" ></div>
+    </section>
+
+    <section class="secao-taxonomia">
+        <!-- Modal para taxonomia de bloom -->
+        <div class="modal right" id="modalBloom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalBloomTitulo">Modal title</h5>
+                </div>
+                <div class="modal-body">
+                        <p id="taxonomia-de-bloom" ></p>      
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div>  
+            <div id="taxonomiaDeBloom"></div>
+        </section>
+
+    <!--<section class="secao-hierarquia-tree" id="tree">
+        <div id="chartdiv"></div>
+    </section> -->
+    <section class="secao-grafico">
+        <div id="grafico">
+            <input type="file" class="form-control" name="inputFile" id="inputFile">
+            <div class="container" style="margin-top: 15%;" id="esconder-div">
+              <div class="row">
+                <!-- Passo 1 -->
+                <div class="col-md-3">
+                <div class="profile-card-4 text-center"><img src="/imagem1.jpeg" class="img img-responsive">
+                    <div class="profile-content">
+                        <div class="profile-name">Passo 1</div>
+                        <div class="profile-description">Clique na aba <strong>Histórico Escolar</strong> no site da PUC SOL.</div>
+                    </div>
+                </div>
+                </div>
+                <!-- Passo 2 -->
+                <div class="col-md-3">
+                  <div class="profile-card-4 text-center"><img src="/imagem3.jpeg" class="img img-responsive">
+                      <div class="profile-content">
+                          <div class="profile-name">Passo 2</div>
+                          <div class="profile-description">Clique com o botão direito na página e selecione a opção <strong>Salvar Como...</strong>.</div>
+                      </div>
+                  </div>
+                  </div>
+                <!-- Passo 3 -->
+                <div class="col-md-3">
+                  <div class="profile-card-4 text-center"><img src="/3.jpeg" class="img img-responsive">
+                      <div class="profile-content">
+                          <div class="profile-name">Passo 3</div>
+                          <div class="profile-description">No campo <strong>Tipo</strong>, selecione a opção <strong>Página Web, Completa</strong> e salve o arquivo.</div>
+                      </div>
+                  </div>
+                  </div>
+                <!-- Passo 4 -->
+                <div class="col-md-3">
+                  <div class="profile-card-4 text-center"><img src="/5.jpeg" class="img img-responsive">
+                      <div class="profile-content">
+                          <div class="profile-name">Passo 4
+                          </div>
+                          <div class="profile-description">Clique em <strong>Escolher Arquivo</strong> e selecione o arquivo que foi salvo.</div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </section>
+  </div>
+ 
+</body>
+
+</html>
